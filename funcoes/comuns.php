@@ -7,9 +7,9 @@
 
 	function data($valor, $modo = 'completo'){
 		if($modo == 'curto'){
-			$data = substr($valor, 8, 2).'/'.substr($valor, 5,2).'/'.substr($valor, 0,4);
+			$data = date('d/m/Y', $valor);
 		}else{
-			$data = substr($valor, 8, 2).'/'.substr($valor, 5,2).'/'.substr($valor, 0,4).' às '.substr($valor, 10);
+			$data = date('d/m/Y', $valor).' às '.date('H:i:s', $valor);
 		}
 		return $data;
 	}
